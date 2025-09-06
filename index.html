@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NinaDev - Web-мастер / Frontend-разработчик | Создание современных сайтов</title>
+    <meta name="description" content="Веб-мастер и фронтенд-разработчик с 2-летним опытом. Создаю адаптивные сайты на HTML, CSS, JavaScript. Специализация: верстка, Tilda, WordPress, оптимизация.">
+    <meta name="keywords" content="веб-мастер, фронтенд-разработчик, создание сайтов, HTML, CSS, JavaScript, верстка, Tilda, WordPress, адаптивный дизайн, веб-разработка">
+    <meta name="author" content="Нина Палёха">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="canonical" href="https://ninapaleha.github.io/NinaDev/">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <meta name="yandex-verification" content="fdfa53e5036e6245" />
+</head>
+<body>
+    <!-- Загрузочный экран -->
+    <div class="loader" id="loader">
+        <div class="bird-container">
+            <div class="bird"></div>
+        </div>
+        <div class="loading-text">Загрузка<span class="dots"></span></div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800" height="0" style="position: absolute;">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <div id="cursor" class="cursor"></div>
+
+    <!-- Шапка сайта -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="/">
+                <img src="images/logo.png" alt="NinaDev Logo" class="logo">
+                <img src="images/logo-white.png" alt="NinaDev Logo" class="logo-white">
+            </a>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Меню -->
+            <nav class="nav-menu" id="navMenu">
+                <ul class="menu-list">
+                    <li><a href="#skills">Навыки</a></li>
+                    <li><a href="#works">Работы</a></li>
+                    <li><a href="#resume">Резюме</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Главный баннер -->
+    <section class="banner">
+        <div class="banner-bg">
+            <div class="banner-anim"></div>
+        </div>
+        
+        <div class="container banner-margin">
+            <div class="banner-content">
+                <h1 class="greeting">Привет, я</h1>
+                <h2 class="name">Нина Палёха</h2>
+                <h3 class="profession">Web-мастер</h3>
+                <p class="description">Создаю и оживляю сайты</p>
+                
+                <div class="buttons">
+                    <a href="#contacts" class="btn btn-contact">Связаться</a>
+                    <a href="#works" class="btn btn-works">Посмотреть работы</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок Обо мне -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="model-container" id="model-container">
+                <!-- 3D модель тут -->
+            </div>
+            
+            <div class="about-content">
+                <p class="about-label">Обо мне</p>
+                <h2 class="about-title">Веб-мастер / Frontend-разработчик</h2>
+                <p class="about-description">Специалист с двухлетним опытом создания, поддержки и оптимизации сайтов. Уверенно владею всей цепочкой: от вёрстки по макетам до запуска на хостинге и настройки аналитики.</p>
+                <div class="about-text-container">
+                    <p class="about-text">Имею СПО по специальности "Разработчик веб и мультимедийных приложений". На данный момент получаю высшее образование по направлению "Информационные системы и технологии" (бакалавриат, заочная форма). Создаю современные и быстрые сайты, которые корректно отображаются на всех устройствах. Настраиваю удобные системы управления контентом и занимаюсь базовой настройкой сайтов. Легко обучаюсь в новых CMS и программах. Готова к работе над сложными проектами и изучению новых инструментов. Адаптируюсь в условиях многозадачности. Стремлюсь к профессиональному росту в области web-разработки и готова получать опыт в новых сферах.</p>
+                </div>
+                <button class="read-more-btn" id="readMoreBtn">Читать далее</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок "Мои навыки" -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="skills-header">
+                <h2 class="skills-title">Мои навыки</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="skills-grid">
+                <!-- Ряд 1 -->
+                <div class="skill-card">
+                    <img src="images/card-html.png" alt="HTML" class="skill-icon">
+                    <p class="skill-name">HTML</p>
+                </div>
+                <div class="skill-card">
+                    <img src="images/card-css.png" alt="CSS" class="skill-icon">
+                    <p class="skill-name">CSS</p>
+                </div>
+                <div class="skill-card">
+                    <img src="images/card-js.png" alt="JavaScript" class="skill-icon">
+                    <p class="skill-name">JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <img src="images/card-php.png" alt="PHP" class="skill-icon">
+                    <p class="skill-name">PHP</p>
+                </div>
+                <div class="skill-card">
+                    <img src="images/card-vs.png" alt="Visual Studio Code" class="skill-icon">
+                    <p class="skill-name">Visual Studio Code</p>
+                </div>
+                
+                <!-- Ряд 2 -->
+                <div class="skill-card">
+                    <img src="images/card-netcat.png" alt="NetCat" class="skill-icon">
+                    <p class="skill-name">NetCat</p>
+                </div>
+                <div class="skill-card">
+                    <img src="images/card-tilda.png" alt="Tilda Publishing" class="skill-icon">
+                    <p class="skill-name">Tilda Publishing</p>
+                </div>
+                <div class="skill-card">
+                    <img src="images/card-mysql.png" alt="MySQL" class="skill-icon mysql-icon">
+                    <p class="skill-name">MySQL</p>
+                </div>
+                <div class="skill-card">
+                    <img src="images/card-wp.png" alt="Wordpress" class="skill-icon">
+                    <p class="skill-name">Wordpress</p>
+                </div>
+                <div class="skill-card">
+                    <img src="images/card-figma.png" alt="Figma" class="skill-icon">
+                    <p class="skill-name">Figma</p>
+                </div>
+                
+                <!-- Ряд 3 -->
+                <div class="skill-card">
+                    <img src="images/card-reg.png" alt="Рег.ру" class="skill-icon">
+                    <p class="skill-name">Рег.ру</p>
+                </div>
+                <div class="skill-card">
+                    <img src="images/card-yandex.png" alt="Яндекс Вебмастер" class="skill-icon">
+                    <p class="skill-name">Яндекс Вебмастер</p>
+                </div>
+                <div class="skill-card">
+                    <img src="images/card-bootstrap.png" alt="Bootstrap" class="skill-icon">
+                    <p class="skill-name">Bootstrap</p>
+                </div>
+                <div class="skill-card">
+                    <img src="images/card-github.png" alt="GitHub" class="skill-icon">
+                    <p class="skill-name">GitHub</p>
+                </div>
+                <div class="skill-card">
+                    <img src="images/card-google.png" alt="Google Analytics" class="skill-icon">
+                    <p class="skill-name">Google Analytics</p>
+                </div>
+            </div>
+            
+            <!-- Карусель для мобильных устройств -->
+            <div class="skills-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <!-- Карточки здесь через JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn">
+                        <img src="images/left.png" alt="Назад">
+                    </button>
+                    
+                    <div class="carousel-dots">
+                        <!-- Точки здесь через JavaScript -->
+                    </div>
+                    
+                    <button class="carousel-btn next-btn">
+                        <img src="images/right.png" alt="Вперед">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок "Мои проекты" -->
+    <section class="projects-section" id="works">
+        <div class="container">
+            <div class="projects-header">
+                <p class="projects-subtitle">Последние работы</p>
+                <h2 class="projects-title">Ознакомьтесь с моими <span class="accent">проектами</span></h2>
+            </div>
+            
+            <div class="projects-grid" id="projects-grid">
+                <!-- Проекты здесь через JavaScript -->
+            </div>
+            
+            <div class="projects-more" id="projects-more">
+                <button class="more-btn" id="load-more">
+                    <span>Смотреть еще проекты</span>
+                    <div class="icon-container">
+                        <img src="images/chevron-right.png" alt="Стрелка" class="icon-default">
+                        <img src="images/chevron-right-white.png" alt="Стрелка" class="icon-hover">
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок "Резюме" -->
+    <section class="resume-section" id="resume">
+        <div class="container">
+            <div class="resume-content">
+                <h2 class="resume-title">Готова к сотрудничеству!</h2>
+                <p class="resume-subtitle">Узнайте больше о моих <span class="accent">навыках</span> и <span class="accent">опыте</span>.</p>
+                
+                <div class="resume-buttons">
+                    <div class="resume-button-group">
+                        <a href="files/Портфолио-Палёха.pdf" download class="resume-btn">
+                            <span>Скачать <span class="accent">портфолио</span></span>
+                            <img src="images/chevron-right-white.png" alt="Скачать">
+                        </a>
+                        <p class="resume-file-info">PDF 5.7MB</p>
+                    </div>
+                    
+                    <div class="resume-button-group">
+                        <a href="https://hh.ru/resume/41956633ff0bd164340039ed1f63786a654c51" target="_blank" class="resume-btn">
+                            <span>Посмотреть <span class="accent">резюме</span></span>
+                            <img src="images/chevron-right-white.png" alt="Посмотреть">
+                        </a>
+                        <p class="resume-file-info">hh.ru</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок "Контакты" -->
+    <section class="contacts-section" id="contacts">
+        <div class="container">
+            <div class="contacts-header">
+                <h2 class="contacts-title">Контакты</h2>
+                <div class="title-line"></div>
+            </div>
+        </div>
+        
+        <div class="contacts-background">
+            <img src="images/sparrows.gif" alt="Фоновое изображение" class="contacts-bg">
+            
+            <div class="contacts-icons">
+                <a href="https://github.com/ninaPaleha/" target="_blank" class="contact-icon">
+                    <img src="images/icon-git.png" alt="GitHub">
+                </a>
+                <a href="https://t.me/WebNina" target="_blank" class="contact-icon">
+                    <img src="images/icon-tg.png" alt="Telegram">
+                </a>
+                <a href="mailto:ninapaleha9@gmail.com" target="_blank" class="contact-icon">
+                    <img src="images/icon-mail.png" alt="Email">
+                </a>
+                <a href="https://borisoglebsk.hh.ru/resume/41956633ff0bd164340039ed1f63786a654c51" target="_blank" class="contact-icon">
+                    <img src="images/icon-hh.png" alt="HeadHunter">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copyright">© 2025 <span class="accent">Нина Палёха</span>. Все права защищены.</p>
+                
+                <nav class="footer-nav">
+                    <a href="#skills">Навыки</a>
+                    <a href="#works">Работы</a>
+                    <a href="#resume">Резюме</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <img src="images/up.svg" alt="Наверх">
+    </button>
+
+    <!-- Поп-ап для недоступного проекта -->
+    <div class="project-popup" id="projectPopup">
+        <div class="popup-overlay"></div>
+        <div class="popup-content">
+            <button class="popup-close" id="closePopup">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            
+            <div class="popup-body">
+                <div class="popup-image">
+                    <img src="images/sparrow.png" alt="Sparrow" class="sparrow-image">
+                </div>
+                
+                <div class="popup-text">
+                    <h3>Проект временно недоступен</h3>
+                    <p>К сожалению, проект "Москвич Боравто" временно не доступен для просмотра.</p>
+                    
+                    <div class="popup-actions">
+                        <button class="btn btn-close" id="closePopupBtn">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Для работы с 3D моделью -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
